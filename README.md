@@ -1,9 +1,10 @@
-# Node.js Backend Template
+# Backend Template Framework
 
-This is a template for creating a Node.js backend application. It includes a basic project structure, essential dependencies, and example code to help you get started quickly.
+This project is a robust backend template framework built with Node.js. It includes features such as configurable logging, security for all APIs, exception/error handling, health check APIs, API documentation, and configurable database management for various databases like Redis, MongoDB, and PostgreSQL. This template allows API developers to focus on writing API logic without worrying about cross-cutting concerns.
 
 ## Table of Contents
 
+- [Features](#Features)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
@@ -11,6 +12,16 @@ This is a template for creating a Node.js backend application. It includes a bas
 - [Dependencies](#dependencies)
 - [Contributing](#contributing)
 - [License](#license)
+
+
+## Features
+
+- Configurable logging using Winston
+- Security middleware using Helmet
+- Exception and error handling
+- Health check APIs
+- API documentation using Swagger
+- Configurable database management for MongoDB, PostgreSQL, and Redis
 
 ## Installation
 
@@ -47,26 +58,40 @@ npm start
 ## Project Structure
 
 ```
-nodejs-backend-template/
-├── src/
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── services/
-│   ├── app.js
-│   └── server.js
-├── .gitignore
+backend-template/
+├── config/
+│   ├── dbConfig.js
+│   ├── loggerConfig.js
+│   └── securityConfig.js
+├── controllers/
+│   └── exampleController.js
+├── middlewares/
+│   ├── errorHandler.js
+│   ├── logger.js
+│   ├── security.js
+│   └── healthCheck.js
+├── models/
+│   └── exampleModel.js
+├── routes/
+│   └── exampleRoutes.js
+├── services/
+│   └── exampleService.js
+├── utils/
+│   ├── logger.js
+│   └── db.js
+├── .env
+├── app.js
 ├── package.json
-├── README.md
-└── .env.example
+└── README.md
 ```
+- **config/**: Configuration files for database, logging, and security.
+- **controllers/**: Controllers for handling API requests.
+- **middlewares/**: Middleware for logging, error handling, security, and health checks.
+- **models/**: Mongoose models for MongoDB.
+- **routes/**: Route definitions for the API.
+- **services/**: Service layer for business logic.
+- **utils/**: Utility functions for logging and database connections.
 
-- **src/controllers/**: Contains the controller files.
-- **src/models/**: Contains the model files.
-- **src/routes/**: Contains the route files.
-- **src/services/**: Contains the service files.
-- **src/app.js**: Initializes the app.
-- **src/server.js**: Starts the server.
 
 ## Scripts
 
